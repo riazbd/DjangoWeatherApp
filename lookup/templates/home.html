@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if cityName %}
+{{ cityName }}
+{% endif %}
+<div class="jumbotron jumbotron-fluid information">
+    <div class="container">
+        <img src="{{ api.current.condition.icon }}" alt="">
+        <h3 class="display-4">{{ api.current.condition.text }}</h3>
+        <p class="lead">The current temperature in <strong>{{ api.location.name }}, {{ api.location.country }}</strong>
+            is
+            <strong>{{ api.current.temp_c }}</strong> Celcius </p>
+    </div>
+</div>
+{% endblock %}
